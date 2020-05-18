@@ -1,13 +1,15 @@
 package com.jeremiasleite.cursomc.resources.exception;
 
+import java.time.OffsetDateTime;
+
 public class StandardError {
 	
 	private Integer status;
 	private String msg;
-	private Long timeStamp;
+	private OffsetDateTime timeStamp;
 	
 	
-	public StandardError(Integer status, String msg, Long timeStamp) {
+	public StandardError(Integer status, String msg, OffsetDateTime timeStamp) {
 		super();
 		this.status = status;
 		this.msg = msg;
@@ -26,10 +28,10 @@ public class StandardError {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	public Long getTimeStamp() {
+	public OffsetDateTime getTimeStamp() {
 		return timeStamp;
 	}
-	public void setTimeStamp(Long timeStamp) {
+	public void setTimeStamp(OffsetDateTime timeStamp) {
 		this.timeStamp = timeStamp;
 	}
 	

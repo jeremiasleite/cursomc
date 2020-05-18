@@ -1,5 +1,7 @@
 package com.jeremiasleite.cursomc.resources.exception;
 
+import java.time.OffsetDateTime;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
@@ -18,7 +20,7 @@ public class ResourceExceptionHandler {
 		StandardError err = new StandardError(
 				HttpStatus.NOT_FOUND.value(), 
 				e.getMessage(), 
-				System.currentTimeMillis());
+				OffsetDateTime.now());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
 	}
 }
