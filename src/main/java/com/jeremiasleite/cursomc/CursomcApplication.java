@@ -9,8 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.jeremiasleite.cursomc.domain.Categoria;
 import com.jeremiasleite.cursomc.domain.Cidade;
+import com.jeremiasleite.cursomc.domain.Cliente;
 import com.jeremiasleite.cursomc.domain.Estado;
 import com.jeremiasleite.cursomc.domain.Produto;
+import com.jeremiasleite.cursomc.domain.enums.TipoCliente;
 import com.jeremiasleite.cursomc.repositories.CategoriaRepository;
 import com.jeremiasleite.cursomc.repositories.CidadeRepository;
 import com.jeremiasleite.cursomc.repositories.EstadoRepository;
@@ -68,6 +70,9 @@ public class CursomcApplication implements CommandLineRunner{
 		
 		estadoRepository.saveAll(Arrays.asList(est1, est2));
 		cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));
+		
+		Cliente cli1 = new Cliente("Maria Silva", "maria@gmail.com", "36378912377",TipoCliente.PESSOAFISICA);
+		cli1.getTelefones().addAll(Arrays.asList("27363323", "989999999"));
 		
 	}
 
