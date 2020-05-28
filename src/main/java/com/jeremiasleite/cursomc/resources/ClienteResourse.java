@@ -1,4 +1,4 @@
-	package com.jeremiasleite.cursomc.resources;
+package com.jeremiasleite.cursomc.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,19 +7,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jeremiasleite.cursomc.domain.Categoria;
-import com.jeremiasleite.cursomc.services.CategoriaService;
+import com.jeremiasleite.cursomc.domain.Cliente;
+import com.jeremiasleite.cursomc.services.ClienteService;
 
 @RestController
-@RequestMapping("/categorias")
-public class CategoriaResource {
+@RequestMapping("/clientes")
+public class ClienteResourse {
 	
 	@Autowired
-	private CategoriaService categoriaService;
+	private ClienteService clienteService;
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<?> find(@PathVariable Integer id) {
-		Categoria obj = categoriaService.find(id);
+		Cliente obj = clienteService.find(id);
 		return ResponseEntity.ok().body(obj);
 	}
+
 }
